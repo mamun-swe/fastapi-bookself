@@ -22,7 +22,7 @@ async def storeBook(data: Book):
 
 
 @bookRouter.get('/{id}')
-async def getSingleBook(id: int):
+async def getSingleBook(id: str):
     return await show(id)
 
 

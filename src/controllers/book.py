@@ -1,21 +1,33 @@
 
+from fastapi import HTTPException
 from src.models.book import Book
+from src.services.book import *
 
 
 # List of resources
 async def index():
-    return 'Book list'
+    documents = await getAllBooks()
+    return {
+        'status': True,
+        'data': documents
+    }
 
 
-# Specific resource
+# Store new resource
 async def store(data: Book):
-    return data
+    result = await createBook(data)
+    if result:
+        return {
+            'status': True,
+            'message': 'Book created.'
+        }
+    return HTTPException(501, 'Something going to creating book.')
 
 
-# Specific resource
-async def show(id: int):
-    strId = str(id)
-    return 'Show ' + strId + "'s book"
+# Show specific resource
+async def show(id: str):
+    result = await findBookById(id)
+    return result
 
 
 # Update specific resource
