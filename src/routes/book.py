@@ -27,10 +27,10 @@ async def getSingleBook(id: str):
 
 
 @bookRouter.put('/{id}')
-async def updateSingleBook(id: int, data: Book):
+async def updateSingleBook(id: str, data: Book):
     return await update(id, data)
 
 
 @bookRouter.delete('/{id}')
-async def deleteSingleBook(id: int):
+async def deleteSingleBook(id: str):
     return await destory(id)
