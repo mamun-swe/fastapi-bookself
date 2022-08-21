@@ -1,7 +1,7 @@
 
 # FastAPI Bookself application
 
-This is a simple Bookself application like as CRUD built using PyMongo and FastAPI.
+This is a simple Bookself application like as CRUD built using Motor and FastAPI.
 
 ## Running the server
 
