@@ -1,7 +1,6 @@
 
 from typing import List
 from pydantic import BaseModel
-from bson import ObjectId
 
 
 class Book(BaseModel):
